@@ -1,7 +1,8 @@
-import React from 'react'
+import styles from "./styles.module.css"
 
 export default function Body() {
   return (
-    <div>Body</div>
+    <div className={styles.bodyContainer}>
+    </div>
   )
 }

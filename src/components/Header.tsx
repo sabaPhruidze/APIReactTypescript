@@ -3,7 +3,7 @@ import logo from "../icon/logo.svg"
 import { useState,useEffect } from "react"
 
 export default function Header(props:any) {
-  const {cShowLogin,sShowLogin} = props
+  const {cShowLogin,sShowLogin,sShowRegister,cShowRegister} = props
   return (
     <div className={styles.headerContainer}>
       <img src={logo} alt="logo" className={styles.logo}/>
@@ -16,7 +16,7 @@ export default function Header(props:any) {
       </nav>
       <div className={styles.regLog}>
         <button style={{marginRight: 20}} className={styles.btn} onClick={() => {sShowLogin(true)}}>Login</button>
-        <button className={styles.btn}>Register</button>
+        <button className={styles.btn} onClick={() => {sShowRegister(true)}}>Register</button>
       </div>
     </div>
   )

@@ -6,7 +6,7 @@ import success from "../icon/success.svg"
 import {useState} from "react"
 export default function Login(props:any) {
 
-    const [cEmail,sEmail] = useState<string | number | readonly string[] | undefined>("")
+    const [cUserName,sUserName] = useState<string | number | readonly string[] | undefined>("")
     const [cPassword,sPassword] = useState<string | number | readonly string[] | undefined>("")
     const [cError1,sError1] = useState<boolean>(false)
     const [cError2,sError2] = useState<boolean>(false)
@@ -16,28 +16,28 @@ export default function Login(props:any) {
         event.preventDefault(); 
         // When we click the button it will not go on another site 
       };
-
+      // regex
       function validateInput(input1:any,input2:any) {
-        const regexEmail = /^(?=.*\d)(?=.*[a-zA-Z]{3,})(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*@(gmail|yahoo)\.com)/;
-        const isValidEmail = regexEmail.test(input1);
+        const regexUserName = /^(?=.*\d)(?=.*[A-Z][a-z]{2,})(?=.*\W).+$/;
+        const isValidUserName = regexUserName.test(input1);
         
         const regexPassword = /^(?=.*\d)(?=.*[a-zA-Z]{7,})(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).*$/
         const isValidPassword =regexPassword.test(input2)
-        if (isValidEmail && isValidPassword) {
+        if (isValidUserName && isValidPassword) {
             sSucess1(true); //if Email was write than you get a notification about it
             sSucess2(true);
             sError1(false);
             sError2(false);
             console.log("nice");
             sShowLogin(false)
-        } else if(isValidEmail && isValidPassword != true){
+        } else if(isValidUserName && isValidPassword != true){
           // Display error message when input is invalid
           sSucess1(true);
           sSucess2(false);
           sError1(false);
           sError2(true);
           console.log("really negga") // if not succeed there will be a warning icon that tells you 
-        }else if(isValidEmail !=true && isValidPassword){
+        }else if(isValidUserName !=true && isValidPassword){
             // Display error message when input is invalid
             sSucess1(false);
             sSucess2(true);
@@ -60,19 +60,19 @@ export default function Login(props:any) {
             <img src={close} alt="close" className={styles.closeImg} onClick={() => {sShowLogin(false)}}/>
             <img src={Authentication} alt="Authentication" className={styles.AuthenticationImg}/>
            <div className={styles.dFlexRow}>
-                {cError1 ? <img src={warning} alt="warning" className={styles.warningImgS}/> : undefined}
-                {cSuccess1 ? <img src={success} alt="success" className={styles.warningImgS}/> : undefined}
-                <label htmlFor="email" style={{cursor:"pointer"}}>Email</label>
-                <input type="email" id="email" onChange={e => sEmail(e.target.value)} value={cEmail} placeholder="At least one digit,three letters,one symbol with the end:'(gmail|yahoo).com'"/>
+                {cError1 ? <img src={warning} alt="warning" className={styles.warningSuccesEU}/> : undefined}
+                {cSuccess1 ? <img src={success} alt="success" className={styles.warningSuccesEU}/> : undefined}
+                <label htmlFor="userName" style={{cursor:"pointer"}}>Username</label>
+                <input type="email" id="userName" onChange={e => sUserName(e.target.value)} value={cUserName} placeholder="At least 1 digit,3 letters (first letter capitalized),1 symbol"/>
            </div>
            <div className={styles.dFlexRow}>
-                {cError2 ? <img src={warning} alt="warning" className={styles.warningImgP}/> : undefined}
-                {cSuccess2 ? <img src={success} alt="success" className={styles.warningImgP}/> : undefined}
+                {cError2 ? <img src={warning} alt="warning" className={styles.warningSuccesEP}/> : undefined}
+                {cSuccess2 ? <img src={success} alt="success" className={styles.warningSuccesEP}/> : undefined}
                 <label htmlFor="password" style={{cursor:"pointer"}}>Password</label>
-                <input type="password" id="password" onChange={e => sPassword(e.target.value)} value={cPassword}/>
+                <input type="password" id="password" onChange={e => sPassword(e.target.value)} value={cPassword} placeholder="At least one digit,seven letter and one symbol"/>
            </div>
            <button className={`${styles.btn} ${styles.btnLogin}`} type="submit" onClick={() => {
-            validateInput(cEmail,cPassword);
+            validateInput(cUserName,cPassword);
            }}>Login</button>
         </form>
     </div>

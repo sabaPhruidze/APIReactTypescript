@@ -222,3 +222,8 @@
     left: 0;
     background-color: #040404;
 }
+.user {
+    color:rgba(124, 142, 207, 0.734);
+    font-size: 18px;
+}
+/* header */

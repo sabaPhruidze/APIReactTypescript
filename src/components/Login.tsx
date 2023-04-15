@@ -5,9 +5,6 @@ import warning from "../icon/warning.svg";
 import success from "../icon/success.svg";
 import { useState } from "react";
 export default function Login(props: any) {
-  const [cUserName, sUserName] = useState<
-    string | number | readonly string[] | undefined
-  >("");
   const [cPassword, sPassword] = useState<
     string | number | readonly string[] | undefined
   >("");
@@ -48,6 +45,7 @@ export default function Login(props: any) {
       sError1(false);
       sError2(false);
       sShowLogin(false);
+      sRemoveRegLog(true);
     } else if (lSUsername === cUserName && lSPassword !== cPassword) {
       // Display error message when input is invalid
       sSucess1(true);
@@ -67,7 +65,7 @@ export default function Login(props: any) {
       sError2(true);
     }
   }
-  const { sShowLogin } = props;
+  const { sShowLogin, sRemoveRegLog, sUserName, cUserName } = props;
   return (
     <div className={styles.loginContainer}>
       <form

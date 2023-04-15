@@ -9,20 +9,11 @@ import { useState } from "react";
 function App() {
   const [cShowLogin, sShowLogin] = useState<boolean>(false);
   const [cShowRegister, sShowRegister] = useState<boolean>(false);
-  // localStorage state
-  const [cLStorage, sLStorage] = useState<any>();
 
-  // localStorage state
   return (
     <div className="container">
       {cShowLogin ? <Login sShowLogin={sShowLogin} /> : null}
-      {cShowRegister ? (
-        <Register
-          sShowRegister={sShowRegister}
-          sLStorage={sLStorage}
-          cLStorage={cLStorage}
-        />
-      ) : null}
+      {cShowRegister ? <Register sShowRegister={sShowRegister} /> : null}
       <Header
         cShowLogin={cShowLogin}
         sShowLogin={sShowLogin}

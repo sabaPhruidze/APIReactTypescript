@@ -5,6 +5,12 @@ import success from "../icon/success.svg";
 import register from "../icon/register.svg";
 import Age from "./Age";
 import { useState, useEffect } from "react";
+interface UserCredentials {
+  username: string | number | readonly string[] | undefined;
+  email: string | number | readonly string[] | undefined;
+  password: string | number | readonly string[] | undefined;
+}
+
 export default function Register(props: any) {
   const [cUserName, sUserName] = useState<
     string | number | readonly string[] | undefined
@@ -24,19 +30,35 @@ export default function Register(props: any) {
   const [cSuccess3, sSucess3] = useState<boolean>(false);
 
   const [cLValue, sLValue] = useState<boolean | null>(false);
-  const { sShowRegister, sLStorage, cLStorage } = props;
+  // const cLVal = useRef(cLValue);
+  const { sShowRegister } = props;
   //error success states
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // When we click the button it will not go on another site
   };
+  //this function gets ready the values to use it for localStorage
+  // localStorage save
+  const handleSave = () => {
+    const userCredentials: UserCredentials = {
+      username: cUserName,
+      email: cEmail,
+      password: cPassword,
+    };
+    //this function saves the value in localStorage
+    saveUserCredentials(userCredentials);
+  };
+  const saveUserCredentials = (userCredentials: UserCredentials) => {
+    localStorage.setItem("userCredentials", JSON.stringify(userCredentials));
+  };
+  // localStorage save
   // regex
   function validateInput(input1: any, input2: any, input3: any) {
-    const regexUserName = /^(?=.*\d)(?=.*[A-Z][a-z]{2,})(?=.*\W).+$/;
+    const regexUserName = /^(?=.*[a-zA-Z].*[a-zA-Z].*[a-zA-Z])(?=.*\d).*$/;
     const isValidUserName = regexUserName.test(input1);
 
     const regexEmail =
-      /^(?=.*[0-9])(?=.*[a-zA-Z]{3,})(?=.*[\W])(?=.*@gmail\.com$).*$/;
+      /^(?=.*\d)(?=.*[a-zA-Z].*[a-zA-Z].*[a-zA-Z])[a-zA-Z\d]{3,}@gmail\.com$/;
     const isValidEmail = regexEmail.test(input2);
 
     const regexPassword =
@@ -49,15 +71,8 @@ export default function Register(props: any) {
       sError1(false);
       sError2(false);
       sError3(false);
-      // localStorage does not work but tomorrow I will take care of that
-      sLStorage({
-        userName: cUserName,
-        userEmail: cEmail,
-        userPassword: cPassword,
-      });
-      sLValue(true);
+      handleSave();
       sShowRegister(false);
-      setLocalStorage();
       //if the information is correctly written like regex wanted the info will be saved in localStorage
       //after this we will try to work the login if only userNames and passwords are same as the registered one
 
@@ -132,13 +147,9 @@ export default function Register(props: any) {
       sError3(true);
     }
   }
+
   // localStorage does not work but tomorrow I will take care of that
-  function setLocalStorage() {
-    if (cLValue === true) {
-      return localStorage.setItem("items", JSON.stringify(cLStorage));
-    }
-  }
-  // if all 3 components are relevant to the regex than it will be uploaded in localStorage
+
   return (
     <div className={styles.loginContainer}>
       <form
@@ -179,7 +190,7 @@ export default function Register(props: any) {
             id="userName"
             onChange={(e) => sUserName(e.target.value)}
             value={cUserName}
-            placeholder="At least 1 digit,3 letters (first letter capitalized),1 symbol"
+            placeholder="At least 1 digit,3 letters (first letter capitalized)"
           />
         </div>
         <div className={styles.dFlexRow}>
@@ -205,7 +216,7 @@ export default function Register(props: any) {
             id="Email"
             onChange={(e) => sEmail(e.target.value)}
             value={cEmail}
-            placeholder='At least 1 digit,3 letters (first letter capitalized),1 symbol,with the end:"@gmail.com"'
+            placeholder='At least 1 digit,3 letters,with the end:"@gmail.com"'
           />
         </div>
         <p className={styles.ageName}>Birthday date</p>
@@ -241,6 +252,7 @@ export default function Register(props: any) {
           type="submit"
           onClick={() => {
             validateInput(cUserName, cEmail, cPassword);
+            sLValue(true);
           }}
         >
           Register

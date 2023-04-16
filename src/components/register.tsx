@@ -165,6 +165,7 @@ export default function Register(props: any) {
           onClick={() => {
             sShowRegister(false);
           }}
+          title="Click here to close the component"
         />
         <img src={register} alt="register" className={styles.registerImg} />
         <div className={styles.dFlexRow}>

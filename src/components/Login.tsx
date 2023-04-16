@@ -87,6 +87,7 @@ export default function Login(props: any) {
           onClick={() => {
             sShowLogin(false);
           }}
+          title="click here to close the Login page"
         />
         <img
           src={Authentication}
@@ -99,6 +100,7 @@ export default function Login(props: any) {
               src={warning}
               alt="warning"
               className={styles.warningSuccesEU}
+              title="At least 1 digit,3 letters (first letter capitalized),1 symbol"
             />
           ) : undefined}
           {cSuccess1 ? (
@@ -125,6 +127,7 @@ export default function Login(props: any) {
               src={warning}
               alt="warning"
               className={styles.warningSuccesEP}
+              title="At least one digit,seven letter and one symbol"
             />
           ) : undefined}
           {cSuccess2 ? (

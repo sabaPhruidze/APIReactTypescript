@@ -4,6 +4,9 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/register";
+
+// npm install react-bootstrap
+
 import "./App.css";
 import { useState } from "react";
 function App() {

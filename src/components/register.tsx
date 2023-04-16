@@ -31,7 +31,7 @@ export default function Register(props: any) {
 
   const [cLValue, sLValue] = useState<boolean | null>(false);
   // const cLVal = useRef(cLValue);
-  const { sShowRegister } = props;
+  const { sShowRegister, cSM } = props;
   //error success states
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -155,13 +155,13 @@ export default function Register(props: any) {
       <form
         action=""
         method="post"
-        className={styles.formR}
+        className={cSM ? styles.formRChange : styles.formR}
         onSubmit={handleFormSubmit}
       >
         <img
           src={close}
           alt="close"
-          className={styles.closeImg}
+          className={cSM ? styles.closeImgChange : styles.closeImg}
           onClick={() => {
             sShowRegister(false);
           }}
@@ -248,7 +248,11 @@ export default function Register(props: any) {
           />
         </div>
         <button
-          className={`${styles.btn} ${styles.btnLogin}`}
+          className={
+            cSM
+              ? `${styles.btn} ${styles.btnLoginChange}`
+              : `${styles.btn} ${styles.btnLogin}`
+          }
           type="submit"
           onClick={() => {
             validateInput(cUserName, cEmail, cPassword);

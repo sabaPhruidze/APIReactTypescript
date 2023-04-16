@@ -3,10 +3,18 @@ import logo from "../icon/logo.svg";
 import { useState, useEffect } from "react";
 
 export default function Header(props: any) {
-  const { sShowLogin, sShowRegister, cRemoveRegLog, sRemoveRegLog, cUserName } =
-    props;
+  const {
+    sShowLogin,
+    sShowRegister,
+    cRemoveRegLog,
+    sRemoveRegLog,
+    cUserName,
+    cSM,
+  } = props;
   return (
-    <div className={styles.headerContainer}>
+    <div
+      className={cSM ? styles.headerContainerChange : styles.headerContainer}
+    >
       <img src={logo} alt="logo" className={styles.logo} />
       <nav>
         <a href="#" className={`${styles.nav}`}>
@@ -30,7 +38,7 @@ export default function Header(props: any) {
           <>
             <button
               style={{ marginRight: 20 }}
-              className={styles.btn}
+              className={cSM ? styles.btnChange : styles.btn}
               onClick={() => {
                 sShowLogin(true);
               }}
@@ -38,7 +46,7 @@ export default function Header(props: any) {
               Login
             </button>
             <button
-              className={styles.btn}
+              className={cSM ? styles.btnChange : styles.btn}
               onClick={() => {
                 sShowRegister(true);
               }}
@@ -53,7 +61,7 @@ export default function Header(props: any) {
               <div className={styles.user}>{cUserName}</div>
               <button
                 style={{ marginLeft: 20 }}
-                className={styles.btn}
+                className={cSM ? styles.btnChange : styles.btn}
                 onClick={() => {
                   sRemoveRegLog(false);
                 }}

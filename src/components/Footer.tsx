@@ -1,7 +1,18 @@
-import styles from "./styles.module.css"
+import styles from "./styles.module.css";
 
-export default function Footer() {
+export default function Footer(props: any) {
+  const { cSM, cShowRegister, cShowLogin } = props;
   return (
-    <div className={styles.footerContainer}>Footer</div>
-  )
+    <div
+      className={
+        cSM
+          ? styles.footerContainerChange
+          : cSM !== true
+          ? styles.footerContainer
+          : undefined
+      }
+    >
+      Footer
+    </div>
+  );
 }

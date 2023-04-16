@@ -1,11 +1,24 @@
 import styles from "./styles.module.css";
 import { useState, useEffect } from "react";
-
+import moonRegular from "../icon/moonRegular.svg";
+import sunRegular from "../icon/sunRegular.svg";
 interface UserCredentials {
   username: string;
   password: string;
 }
 
-export default function Body() {
-  return <div className={styles.bodyContainer}></div>;
+export default function Body(props: any) {
+  const { cSM, sSM } = props;
+  return (
+    <div className={cSM ? styles.bodyContainerChange : styles.bodyContainer}>
+      <img
+        src={cSM ? moonRegular : sunRegular}
+        alt="Change background color to dark"
+        className={cSM ? styles.moonRegular : styles.sunRegular}
+        onClick={() => {
+          sSM(!cSM);
+        }}
+      />
+    </div>
+  );
 }

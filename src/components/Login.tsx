@@ -3,7 +3,7 @@ import Authentication from "../icon/Authentication-rafiki.svg";
 import close from "../icon/close.svg";
 import warning from "../icon/warning.svg";
 import success from "../icon/success.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function Login(props: any) {
   const [cPassword, sPassword] = useState<
     string | number | readonly string[] | undefined
@@ -19,6 +19,12 @@ export default function Login(props: any) {
     event.preventDefault();
     // When we click the button it will not go on another site
   };
+
+  useEffect(() => {
+    handleGetUserName();
+    handleGetPassword();
+  }, []);
+
   // check with localStorage
   const getUserCredentials = () => {
     const storedCredentials = localStorage.getItem("userCredentials");
@@ -65,19 +71,19 @@ export default function Login(props: any) {
       sError2(true);
     }
   }
-  const { sShowLogin, sRemoveRegLog, sUserName, cUserName } = props;
+  const { sShowLogin, sRemoveRegLog, sUserName, cUserName, cSM } = props;
   return (
     <div className={styles.loginContainer}>
       <form
         action=""
         method="post"
-        className={styles.formL}
+        className={cSM ? styles.formLChange : styles.formL}
         onSubmit={handleFormSubmit}
       >
         <img
           src={close}
           alt="close"
-          className={styles.closeImg}
+          className={cSM ? styles.closeImgChange : styles.closeImg}
           onClick={() => {
             sShowLogin(false);
           }}
@@ -140,11 +146,13 @@ export default function Login(props: any) {
           />
         </div>
         <button
-          className={`${styles.btn} ${styles.btnLogin}`}
+          className={
+            cSM
+              ? `${styles.btn} ${styles.btnLoginChange}`
+              : `${styles.btn} ${styles.btnLogin}`
+          }
           type="submit"
           onClick={() => {
-            handleGetUserName();
-            handleGetPassword();
             validateInput();
           }}
         >

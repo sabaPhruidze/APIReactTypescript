@@ -17,6 +17,7 @@ function App() {
   const [cUserName, sUserName] = useState<
     string | number | readonly string[] | undefined
   >("");
+  const [cPageNum, sPageNum] = useState<number>(0);
   const [cSM, sSM] = useState<boolean>(false); //current Sun moon change , set sun moon change
   //more visit in header
   return (
@@ -42,8 +43,10 @@ function App() {
         sRemoveRegLog={sRemoveRegLog}
         cUserName={cUserName}
         cSM={cSM}
+        cPageNum={cPageNum}
+        sPageNum={sPageNum}
       />
-      <Body cSM={cSM} sSM={sSM} />
+      <Body cSM={cSM} sSM={sSM} cPageNum={cPageNum} />
       <Footer cSM={cSM} cShowLogin={cShowLogin} cShowRegister={cShowRegister} />
     </div>
   );

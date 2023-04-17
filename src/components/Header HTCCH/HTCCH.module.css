@@ -1,0 +1,122 @@
+/* contact */
+.dFlexRow {
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+.dFlexRowChange {
+    color: black;
+}
+.dFlexRow h1,.dFlexRowChange h1 {
+    margin-bottom: 30px;
+}
+.dFlexRow p, .dFlexRowChange p {
+    margin-bottom: 20px;
+}
+.contactForm {
+    width:calc(100% / 2);
+    height:100%;
+    padding: 50px 30px;
+    position: relative;
+}
+.dFlexColumn {
+    width:100%;
+    height:70px;
+    display: flex;
+    flex-direction: column;
+} 
+.dFlexColumn label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.dFlexColumn input {
+    height:35px;
+    font-size: 16px;
+    padding:0 15px;
+}
+.textArea {
+    min-height: 100px;
+}
+.contactInfo {
+    width:calc(100% / 2);
+    height:100%;
+    background-color: aqua;
+}
+.btn {
+    width:120px;
+    height:40px;
+    border-radius: 10px;
+    background-color: black;
+    color:white;
+    border:0;
+}
+.btn:active, .btn:focus {
+    transform: scale(0.97);
+    transition: 0.3s;
+}
+.btnChange {
+    width:120px;
+    height:40px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    color:black;
+}
+.btnChange:active, .btnChange:focus {
+    transform: scale(0.97);
+    transition: 0.3s;
+}
+.btnSubmit {
+    margin-top:50px;
+}
+/* warning-sucess */
+.warning1 {
+    width:20px;
+    height:20px;
+    filter: invert(16%) sepia(90%) saturate(5062%) hue-rotate(357deg) brightness(97%) contrast(121%);
+}
+.warning1, .success1 {
+    position: absolute;
+    top:210px;
+    right:40px;
+}
+.success1 {
+    width:20px;
+    height:20px;
+    filter: invert(14%) sepia(68%) saturate(7459%) hue-rotate(8deg) brightness(90%) contrast(120%);
+}
+.warning2 {
+    width:20px;
+    height:20px;
+    filter: invert(16%) sepia(90%) saturate(5062%) hue-rotate(357deg) brightness(97%) contrast(121%);
+}
+.warning2, .success2 {
+    position: absolute;
+    top:calc(210px + 70px);
+    right:40px;
+}
+.success2 {
+    width:20px;
+    height:20px;
+    filter: invert(14%) sepia(68%) saturate(7459%) hue-rotate(8deg) brightness(90%) contrast(120%);
+}
+.warning3 {
+    width:20px;
+    height:20px;
+    filter: invert(16%) sepia(90%) saturate(5062%) hue-rotate(357deg) brightness(97%) contrast(121%);
+}
+.warning3, .success3 {
+    position: absolute;
+    top:calc(210px + 70px + 70px);
+    right:40px;
+}
+.success3 {
+    width:20px;
+    height:20px;
+    filter: invert(14%) sepia(68%) saturate(7459%) hue-rotate(8deg) brightness(90%) contrast(120%);
+}
+/* warning-sucess */
+
+/* contact */

@@ -1,9 +1,9 @@
 import Carousel from "react-bootstrap/Carousel";
-import slider1 from "../images/zotac.jpg";
-import slider2 from "../images/viper.jpg";
-import slider3 from "../images/laptop.jpg";
-import slider4 from "../images/microlabJustListen.jpg";
-import slider5 from "../images/acme.jpg";
+import slider1 from "../../images/zotac.jpg";
+import slider2 from "../../images/viper.jpg";
+import slider3 from "../../images/laptop.jpg";
+import slider4 from "../../images/microlabJustListen.jpg";
+import slider5 from "../../images/acme.jpg";
 function CarouselFade(props: any) {
   const { cSM } = props;
   return (

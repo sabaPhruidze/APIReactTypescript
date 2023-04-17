@@ -1,5 +1,10 @@
 import styles from "./styles.module.css";
 import logo from "../icon/logo.svg";
+import Home from "./Header HTCCH/Home";
+import Technology from "./Header HTCCH/Technology";
+import Contact from "./Header HTCCH/Contact";
+import ConfidentialAgreement from "./Header HTCCH/ConfidentialAgreement";
+import Help from "./Header HTCCH/Help";
 import { useState, useEffect } from "react";
 
 export default function Header(props: any) {
@@ -10,6 +15,7 @@ export default function Header(props: any) {
     sRemoveRegLog,
     cUserName,
     cSM,
+    sPageNum,
   } = props;
   return (
     <div
@@ -17,19 +23,19 @@ export default function Header(props: any) {
     >
       <img src={logo} alt="logo" className={styles.logo} />
       <nav>
-        <a href="#" className={`${styles.nav}`}>
+        <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(0)}>
           Home
         </a>
-        <a href="#" className={`${styles.nav}`}>
+        <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(1)}>
           Technology
         </a>
-        <a href="#" className={`${styles.nav}`}>
+        <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(2)}>
           Contact
         </a>
-        <a href="#" className={`${styles.nav}`}>
+        <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(3)}>
           confidential agreement
         </a>
-        <a href="#" className={`${styles.nav}`}>
+        <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(4)}>
           help
         </a>
       </nav>

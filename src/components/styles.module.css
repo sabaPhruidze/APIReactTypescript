@@ -76,6 +76,8 @@
     justify-content: center;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.719);
+    z-index: 3; 
+    /* z-index will help me to move login and register to the front */
 }
 .formL {
     width:450px;
@@ -203,6 +205,7 @@
         justify-content: center;
         position: relative;
         color:white;
+        z-index: 2;
     }
     .formRChange {
         width:450px;
@@ -288,22 +291,37 @@
 .bodyContainer {
     width:100%;
     height:calc(100vh - 100px);
-    background-color: #0e0e0e;
+    /* background-color: #0e0e0e; */
+    position: relative;
+    z-index: 1;
+    background-image: url("../images/black1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .bodyContainerChange {
     width:100%;
     height:calc(100vh - 100px);
-    background-color: #bbb8be;
+    /* background-color: #bbb8be; */
+    background-image: url("../images/white.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     color:black;
+    position: relative;
+    z-index: 1;
 }
 .moonRegular, .sunRegular {
-    width:20px;
-    height: 20px;
+    top:-35px;
+    right: 200px;
     cursor: pointer;
-    margin :10px 0 0 10px;
+    position: absolute;
+    width:20px;
+    height:20px;
+    z-index: 1;
 }
 .moonRegular {
-    filter: invert(99%) sepia(12%) saturate(2059%) hue-rotate(305deg) brightness(101%) contrast(93%);
+    filter: invert(5%) sepia(15%) saturate(611%) hue-rotate(315deg) brightness(104%) contrast(99%);
 }
 .sunRegular {
     filter: invert(96%) sepia(30%) saturate(2636%) hue-rotate(355deg) brightness(105%) contrast(105%);

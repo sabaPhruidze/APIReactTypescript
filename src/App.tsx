@@ -4,7 +4,8 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/register";
-
+import Button from "react-bootstrap/Button";
+import "bootstrap/dist/css/bootstrap.min.css";
 // npm install react-bootstrap
 
 import "./App.css";
@@ -19,7 +20,7 @@ function App() {
   const [cSM, sSM] = useState<boolean>(false); //current Sun moon change , set sun moon change
   //more visit in header
   return (
-    <div className={cSM ? "containerChange" : "container"}>
+    <div className={cSM ? "containerChange" : "containerFirst"}>
       {cShowLogin ? (
         <Login
           sShowLogin={sShowLogin}

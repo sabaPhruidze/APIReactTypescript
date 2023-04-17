@@ -21,7 +21,7 @@ export default function Body(props: any) {
         }}
         title="click to change the background color"
       />
-      <Carousel />
+      <Carousel cSM={cSM} />
     </div>
   );
 }

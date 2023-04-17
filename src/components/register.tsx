@@ -2,7 +2,8 @@ import styles from "./styles.module.css";
 import close from "../icon/close.svg";
 import warning from "../icon/warning.svg";
 import success from "../icon/success.svg";
-import register from "../icon/register.svg";
+import registerImgBlack from "../images/SignUpBlack.svg";
+import registerImgWhite from "../images/SignUpWhite.svg";
 import Age from "./Age";
 import { useState, useEffect } from "react";
 interface UserCredentials {
@@ -167,7 +168,11 @@ export default function Register(props: any) {
           }}
           title="Click here to close the component"
         />
-        <img src={register} alt="register" className={styles.registerImg} />
+        <img
+          src={cSM ? registerImgWhite : registerImgBlack}
+          alt="register"
+          className={styles.registerImg}
+        />
         <div className={styles.dFlexRow}>
           {cError1 ? (
             <img

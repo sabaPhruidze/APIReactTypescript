@@ -3,8 +3,8 @@ import styles from "./HTCCH.module.css";
 import axios from "axios";
 import warning from "../../icon/warning.svg";
 import success from "../../icon/success.svg";
-import GetinTouchWhite from "../../images/getInTouchWhite.png";
-import getinTouchBlack from "../../images/getInTouchBlack.png";
+import GetinTouchWhite from "../../images/getInTouchWhite.svg";
+import getinTouchBlack from "../../images/getInTouchBlack.svg";
 import { useState, useEffect } from "react";
 export default function Contact(props: any) {
   const { cSM } = props;

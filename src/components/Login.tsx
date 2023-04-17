@@ -1,5 +1,6 @@
 import styles from "./styles.module.css";
-import Authentication from "../icon/Authentication-rafiki.svg";
+import logInImgBlack from "../images/loginBlack.svg";
+import logInImgWhite from "../images/loginWhite.svg";
 import close from "../icon/close.svg";
 import warning from "../icon/warning.svg";
 import success from "../icon/success.svg";
@@ -90,7 +91,7 @@ export default function Login(props: any) {
           title="click here to close the Login page"
         />
         <img
-          src={Authentication}
+          src={cSM ? logInImgWhite : logInImgBlack}
           alt="Authentication"
           className={styles.AuthenticationImg}
         />

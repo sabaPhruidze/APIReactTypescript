@@ -16,7 +16,7 @@
     margin-bottom: 20px;
 }
 .contactForm {
-    width:calc(100% / 2);
+    width:calc(40%);
     height:100%;
     padding: 50px 30px;
     position: relative;
@@ -41,9 +41,8 @@
     min-height: 100px;
 }
 .contactInfo {
-    width:calc(100% / 2);
+    width:calc(60%);
     height:100%;
-    background-color: aqua;
 }
 .btn {
     width:120px;
@@ -81,6 +80,7 @@
     position: absolute;
     top:210px;
     right:40px;
+    cursor: pointer;
 }
 .success1 {
     width:20px;
@@ -96,6 +96,7 @@
     position: absolute;
     top:calc(210px + 70px);
     right:40px;
+    cursor: pointer;
 }
 .success2 {
     width:20px;
@@ -111,6 +112,7 @@
     position: absolute;
     top:calc(210px + 70px + 70px);
     right:40px;
+    cursor: pointer;
 }
 .success3 {
     width:20px;
@@ -118,5 +120,13 @@
     filter: invert(14%) sepia(68%) saturate(7459%) hue-rotate(8deg) brightness(90%) contrast(120%);
 }
 /* warning-sucess */
-
+.getInTouchImg {
+    width:50%;
+    height:100%;
+    position: absolute;
+    background-color: transparent;
+    right:80px;
+    top:50px;
+    z-index: 1;
+}
 /* contact */

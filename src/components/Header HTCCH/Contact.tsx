@@ -3,6 +3,8 @@ import styles from "./HTCCH.module.css";
 import axios from "axios";
 import warning from "../../icon/warning.svg";
 import success from "../../icon/success.svg";
+import GetinTouchWhite from "../../images/getInTouchWhite.png";
+import getinTouchBlack from "../../images/getInTouchBlack.png";
 import { useState, useEffect } from "react";
 export default function Contact(props: any) {
   const { cSM } = props;
@@ -202,7 +204,21 @@ export default function Contact(props: any) {
           </button>
         </form>
       </div>
-      <div className={styles.contactInfo}></div>
+      <div className={styles.contactInfo}>
+        <img
+          src={cSM ? GetinTouchWhite : getinTouchBlack}
+          alt="getInTouchImg"
+          className={styles.getInTouchImg}
+        />
+        <div>
+          <h1>Contact information</h1>
+          <ul>
+            <li>Address: Tbilisi, Tsereteli #</li>
+            <li>Email: notTrueEmail@gmail.com</li>
+            <li>Phone: 533 33 33 33</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

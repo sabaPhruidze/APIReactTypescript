@@ -47,7 +47,13 @@ function App() {
         sPageNum={sPageNum}
       />
       <Body cSM={cSM} sSM={sSM} cPageNum={cPageNum} />
-      <Footer cSM={cSM} cShowLogin={cShowLogin} cShowRegister={cShowRegister} />
+      <Footer
+        cSM={cSM}
+        cShowLogin={cShowLogin}
+        cShowRegister={cShowRegister}
+        cPageNum={cPageNum}
+        sPageNum={sPageNum}
+      />
     </div>
   );
 }

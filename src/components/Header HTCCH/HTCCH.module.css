@@ -21,24 +21,45 @@
     padding: 50px 30px;
     position: relative;
 }
-.dFlexColumn {
+.dFlexColumn, .dFlexColumnChange {
     width:100%;
-    height:70px;
+    height:80px;
     display: flex;
     flex-direction: column;
 } 
-.dFlexColumn label {
+.dFlexColumn label,.dFlexColumnChange label {
     font-size: 18px;
     margin-bottom: 5px;
     cursor: pointer;
 }
 .dFlexColumn input {
-    height:35px;
+    height:50px;
     font-size: 16px;
     padding:0 15px;
+    border-radius: 20px;
+    background-color: white;
+    color:rgb(49, 31, 31)
 }
-.textArea {
+.dFlexColumnChange input {
+    height:50px;
+    font-size: 16px;
+    padding:0 15px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.841);
+    color:rgb(238, 238, 238)
+}
+.textArea, .textAreaChange {
     min-height: 100px;
+    border-radius: 20px;
+
+}
+.textArea textarea {
+    background-color: rgba(0, 0, 0, 0.841);
+    color:rgb(238, 238, 238);
+}
+.textAreaChange textarea {
+    background-color: rgb(238, 238, 238);
+    color:rgba(0, 0, 0, 0.841);
 }
 .contactInfo {
     width:calc(60%);
@@ -78,7 +99,7 @@
 }
 .warning1, .success1 {
     position: absolute;
-    top:210px;
+    top:217px;
     right:40px;
     cursor: pointer;
 }
@@ -94,7 +115,7 @@
 }
 .warning2, .success2 {
     position: absolute;
-    top:calc(210px + 70px);
+    top:calc(210px + 87px);
     right:40px;
     cursor: pointer;
 }
@@ -110,7 +131,7 @@
 }
 .warning3, .success3 {
     position: absolute;
-    top:calc(210px + 70px + 70px);
+    top:calc(210px + 70px + 92px);
     right:40px;
     cursor: pointer;
 }
@@ -125,8 +146,39 @@
     height:100%;
     position: absolute;
     background-color: transparent;
-    right:80px;
+    right:20px;
     top:50px;
     z-index: 1;
+}
+.checkPost {
+   
+    width:100%;
+    height:80px;
+    padding-left: 10px;
+    padding-top: 10px;
+    border-radius: 30px;
+    background-color:rgb(243, 239, 235);
+    border: 1px solid rgba(0, 0, 0, 0.427);
+    color:black;
+}
+.cII {
+    margin-top: 50px;
+}
+.cII ul li {
+    margin-left:-13px;
+}
+.checkPostChange {
+   
+    
+    background-color:rgba(0, 0, 0, 0.427);
+    border: 1px solid rgb(243, 239, 235);
+    color:white;
+}
+h6 a {
+    color: rgb(18, 100, 253);
+    text-decoration: none;
+}
+h6 a:hover {
+    text-decoration: underline;
 }
 /* contact */

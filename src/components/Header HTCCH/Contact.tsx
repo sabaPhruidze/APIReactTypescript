@@ -137,7 +137,13 @@ export default function Contact(props: any) {
         <h1>Contact form</h1>
         <p>Fill in the fields below and click the submit button</p>
         <form method="post" onSubmit={handleSubmit}>
-          <div className={`${styles.dFlexColumn} ${styles.name}`}>
+          <div
+            className={
+              cSM
+                ? `${styles.dFlexColumn} ${styles.name}`
+                : `${styles.dFlexColumnChange} ${styles.name}`
+            }
+          >
             {cError1 ? (
               <img src={warning} alt="warning" className={styles.warning1} />
             ) : undefined}
@@ -156,7 +162,13 @@ export default function Contact(props: any) {
               placeholder="At least 3 letters"
             />
           </div>
-          <div className={`${styles.dFlexColumn} ${styles.email}`}>
+          <div
+            className={
+              cSM
+                ? `${styles.dFlexColumn} ${styles.email}`
+                : `${styles.dFlexColumnChange} ${styles.email}`
+            }
+          >
             {cError2 ? (
               <img src={warning} alt="warning" className={styles.warning2} />
             ) : undefined}
@@ -173,7 +185,13 @@ export default function Contact(props: any) {
               placeholder='At least 3 letters with the end "gmail.com"'
             />
           </div>
-          <div className={`${styles.dFlexColumn} ${styles.textArea}`}>
+          <div
+            className={
+              cSM
+                ? `${styles.dFlexColumn} ${styles.textAreaChange}`
+                : `${styles.dFlexColumnChange} ${styles.textArea}`
+            }
+          >
             {cError3 ? (
               <img src={warning} alt="warning" className={styles.warning3} />
             ) : undefined}
@@ -187,7 +205,7 @@ export default function Contact(props: any) {
               className={styles.textArea}
               onChange={(e) => sTextArea(e.target.value)}
               value={cTextArea}
-              placeholder="At least 7 letters"
+              placeholder="  At least 7 letters"
             ></textarea>
           </div>
           <button
@@ -202,6 +220,23 @@ export default function Contact(props: any) {
           >
             Submit
           </button>
+          <br />
+          <br />
+          <h6
+            className={
+              cSM
+                ? styles.checkPost
+                : `${styles.checkPost} ${styles.checkPostChange}`
+            }
+          >
+            To determine whether the message has been successfully transmitted,
+            please kindly click on the provided
+            <a href="https://coding-world.com/fake-contact/" target="_blank">
+              {" "}
+              link
+            </a>{" "}
+            and proceed to the following page.
+          </h6>
         </form>
       </div>
       <div className={styles.contactInfo}>
@@ -210,7 +245,8 @@ export default function Contact(props: any) {
           alt="getInTouchImg"
           className={styles.getInTouchImg}
         />
-        <div>
+        <div className={styles.cII}>
+          {/* contact info information part */}
           <h1>Contact information</h1>
           <ul>
             <li>Address: Tbilisi, Tsereteli #</li>

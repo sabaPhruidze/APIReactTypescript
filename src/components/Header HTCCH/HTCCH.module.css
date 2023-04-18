@@ -182,3 +182,91 @@ h6 a:hover {
     text-decoration: underline;
 }
 /* contact */
+/* confidential agreement */
+.fullAccordionContainerWhite {
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+}
+.fullAccordionContainerBlack {
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    
+}
+.accordionContainer {
+    width:1200px;
+    height:600px;
+    border-radius: 30px;
+    background-image: url("../../images/black1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1200px;
+    padding: 10px 20px;
+}
+.parentBlur {
+    filter: blur(5px);
+}
+.childNoBlur {
+    filter: none;
+}
+.accordionContainerChange {
+    background-image: url("../../images/white.jpg");
+    width:1200px;
+    height:600px;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1200px;
+    padding: 10px 20px;
+}
+.accordionCard {
+    width:100%;
+    height:125px;
+}
+.headLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+.bodyLine {
+    margin-top:-10px;
+    padding: 0 10px;
+}
+.accordionArrow {
+    width:20px;
+    height:20px;
+    cursor: pointer;
+    filter: invert(100%) sepia(8%) saturate(7467%) hue-rotate(298deg) brightness(108%) contrast(94%);
+}
+.accordionArrowChange {
+    width:20px;
+    height:20px;
+    cursor: pointer;
+    transform: rotate(180deg);
+    filter: invert(100%) sepia(8%) saturate(7467%) hue-rotate(298deg) brightness(108%) contrast(94%);
+}
+.accordionArrowL {
+    width:20px;
+    height:20px;
+    cursor: pointer;
+    filter: invert(0%) sepia(2%) saturate(21%) hue-rotate(286deg) brightness(101%) contrast(100%);
+}
+.accordionArrowChangeL {
+    width:20px;
+    height:20px;
+    cursor: pointer;
+    transform: rotate(180deg);
+    filter: invert(0%) sepia(2%) saturate(21%) hue-rotate(286deg) brightness(101%) contrast(100%);
+}
+
+/* confidential agreement */

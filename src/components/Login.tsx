@@ -6,21 +6,26 @@ import warning from "../icon/warning.svg";
 import success from "../icon/success.svg";
 import { useEffect, useState } from "react";
 export default function Login(props: any) {
+  // cUserName sUserName input login user
+  const { sShowLogin, sRemoveRegLog, sRUserName, cRUserName, cSM } = props;
+  //input login password
   const [cPassword, sPassword] = useState<
     string | number | readonly string[] | undefined
   >("");
+  //success fail
   const [cError1, sError1] = useState<boolean>(false);
   const [cError2, sError2] = useState<boolean>(false);
   const [cSuccess1, sSucess1] = useState<boolean>(false);
   const [cSuccess2, sSucess2] = useState<boolean>(false);
-
+  // user registered userName and password
   const [lSUsername, setLSUsername] = useState<string | number | symbol>();
   const [lSPassword, setLSPassword] = useState<string | number | symbol>();
+  //prevent default form
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // When we click the button it will not go on another site
   };
-
+  // user registered get userName and  get password
   useEffect(() => {
     handleGetUserName();
     handleGetPassword();
@@ -38,7 +43,6 @@ export default function Login(props: any) {
     const userCredentials = getUserCredentials();
     setLSUsername(userCredentials.username);
   };
-
   const handleGetPassword = () => {
     const userCredentials = getUserCredentials();
     setLSPassword(userCredentials.password);
@@ -46,20 +50,20 @@ export default function Login(props: any) {
   // check with localStorage
   // regex
   function validateInput() {
-    if (lSUsername === cUserName && lSPassword === cPassword) {
+    if (lSUsername === cRUserName && lSPassword === cPassword) {
       sSucess1(true); //if Email was write than you get a notification about it
       sSucess2(true);
       sError1(false);
       sError2(false);
       sShowLogin(false);
       sRemoveRegLog(true);
-    } else if (lSUsername === cUserName && lSPassword !== cPassword) {
+    } else if (lSUsername === cRUserName && lSPassword !== cPassword) {
       // Display error message when input is invalid
       sSucess1(true);
       sSucess2(false);
       sError1(false);
       sError2(true);
-    } else if (lSUsername !== cUserName && lSPassword === cPassword) {
+    } else if (lSUsername !== cRUserName && lSPassword === cPassword) {
       // Display error message when input is invalid
       sSucess1(false);
       sSucess2(true);
@@ -72,7 +76,7 @@ export default function Login(props: any) {
       sError2(true);
     }
   }
-  const { sShowLogin, sRemoveRegLog, sUserName, cUserName, cSM } = props;
+
   return (
     <div className={styles.loginContainer}>
       <form
@@ -117,8 +121,8 @@ export default function Login(props: any) {
           <input
             type="email"
             id="userName"
-            onChange={(e) => sUserName(e.target.value)}
-            value={cUserName}
+            onChange={(e) => sRUserName(e.target.value)}
+            value={cRUserName}
             placeholder="At least 1 digit,3 letters (first letter capitalized),1 symbol"
           />
         </div>

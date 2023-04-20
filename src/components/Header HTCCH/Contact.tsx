@@ -12,8 +12,8 @@ export default function Contact(props: any) {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
   };
-  const [cUserName, sUserName] = useState<string>("");
-  const [cEmail, sEmail] = useState<string>("");
+  const [cRUserName, sRUserName] = useState<string>("");
+  const [cREmail, sEmail] = useState<string>("");
   const [cTextArea, sTextArea] = useState<string>("");
 
   type post = {
@@ -51,8 +51,8 @@ export default function Contact(props: any) {
 
   function sendInfo() {
     sSendInfo({
-      name: cUserName,
-      email: cEmail,
+      name: cRUserName,
+      email: cREmail,
       text: cTextArea,
     });
     sSend(!cSend);
@@ -157,8 +157,8 @@ export default function Contact(props: any) {
               type="text"
               id="name"
               name="name"
-              onChange={(e) => sUserName(e.target.value)}
-              value={cUserName}
+              onChange={(e) => sRUserName(e.target.value)}
+              value={cRUserName}
               placeholder="At least 3 letters"
             />
           </div>
@@ -181,7 +181,7 @@ export default function Contact(props: any) {
               id="email"
               name="email"
               onChange={(e) => sEmail(e.target.value)}
-              value={cEmail}
+              value={cREmail}
               placeholder='At least 3 letters with the end "gmail.com"'
             />
           </div>
@@ -215,7 +215,7 @@ export default function Contact(props: any) {
                 : `${styles.btn} ${styles.btnSubmit}`
             }
             onClick={() => {
-              regexCheck(cUserName, cEmail, cTextArea);
+              regexCheck(cRUserName, cREmail, cTextArea);
             }}
           >
             Submit

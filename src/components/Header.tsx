@@ -13,7 +13,7 @@ export default function Header(props: any) {
     sShowRegister,
     cRemoveRegLog,
     sRemoveRegLog,
-    cUserName,
+    cRUserName,
     cSM,
     sPageNum,
   } = props;
@@ -64,7 +64,7 @@ export default function Header(props: any) {
           <>
             {/* <> and </> makes like an JSX */}
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <div className={styles.user}>{cUserName}</div>
+              <div className={styles.user}>{cRUserName}</div>
               <button
                 style={{ marginLeft: 20 }}
                 className={cSM ? styles.btnChange : styles.btn}

@@ -14,7 +14,8 @@ function App() {
   const [cShowLogin, sShowLogin] = useState<boolean>(false);
   const [cShowRegister, sShowRegister] = useState<boolean>(false);
   const [cRemoveRegLog, sRemoveRegLog] = useState<boolean>(false); // this will show or remove register login
-  const [cRUserName, sRUserName] = useState<
+  const [cRemoveLSlogin, sRemoveLSlogin] = useState<boolean>(false);
+  const [cLoginUserName, sLoginUserName] = useState<
     string | number | readonly string[] | undefined
   >("");
   const [cPageNum, sPageNum] = useState<number>(0);
@@ -26,9 +27,11 @@ function App() {
         <Login
           sShowLogin={sShowLogin}
           sRemoveRegLog={sRemoveRegLog}
-          cRUserName={cRUserName}
-          sRUserName={sRUserName}
+          cLoginUserName={cLoginUserName}
+          sLoginUserName={sLoginUserName}
           cSM={cSM}
+          cRemoveRegLog={cRemoveRegLog}
+          cRemoveLSlogin={cRemoveLSlogin}
         />
       ) : null}
       {cShowRegister ? (
@@ -41,10 +44,13 @@ function App() {
         sShowRegister={sShowRegister}
         cRemoveRegLog={cRemoveRegLog}
         sRemoveRegLog={sRemoveRegLog}
-        cRUserName={cRUserName}
+        cLoginUserName={cLoginUserName}
         cSM={cSM}
+        sSM={sSM}
         cPageNum={cPageNum}
         sPageNum={sPageNum}
+        cRemoveLSlogin={cRemoveLSlogin}
+        sRemoveLSlogin={sRemoveLSlogin}
       />
       <Body cSM={cSM} sSM={sSM} cPageNum={cPageNum} />
       <Footer

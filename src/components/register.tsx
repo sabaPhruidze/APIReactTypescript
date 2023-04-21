@@ -6,22 +6,32 @@ import registerImgBlack from "../images/SignUpBlack.svg";
 import registerImgWhite from "../images/SignUpWhite.svg";
 import Age from "./Age";
 import { useState, useEffect } from "react";
-interface UserCredentials {
+
+//register credential interface
+interface userRegisterCredentials {
   username: string | number | readonly string[] | undefined;
   email: string | number | readonly string[] | undefined;
   password: string | number | readonly string[] | undefined;
 }
+//register credential interface
 
 export default function Register(props: any) {
-  const [cUserName, sUserName] = useState<
+  // props
+  const { sShowRegister, cSM } = props;
+  //props
+
+  // register credentials useState
+  const [cRUserName, sRUserName] = useState<
     string | number | readonly string[] | undefined
   >("");
   const [cEmail, sEmail] = useState<
     string | number | readonly string[] | undefined
   >("");
-  const [cPassword, sPassword] = useState<
+  const [cRPassword, sRPassword] = useState<
     string | number | readonly string[] | undefined
   >("");
+  // register credentials useState
+
   //error success states
   const [cError1, sError1] = useState<boolean>(false);
   const [cError2, sError2] = useState<boolean>(false);
@@ -29,28 +39,35 @@ export default function Register(props: any) {
   const [cSuccess1, sSucess1] = useState<boolean>(false);
   const [cSuccess2, sSucess2] = useState<boolean>(false);
   const [cSuccess3, sSucess3] = useState<boolean>(false);
-
-  const [cLValue, sLValue] = useState<boolean | null>(false);
-  // const cLVal = useRef(cLValue);
-  const { sShowRegister, cSM } = props;
   //error success states
+  //local storage values
+  const [cLSValue, sLSValue] = useState<boolean | null>(false);
+  //local storage values
+
+  //prevent default from form
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
     // When we click the button it will not go on another site
+    event.preventDefault();
   };
-  //this function gets ready the values to use it for localStorage
-  // localStorage save
-  const handleSave = () => {
-    const userCredentials: UserCredentials = {
-      username: cUserName,
+
+  // save Register In Local Storage step 1
+  const saveRILStorage = () => {
+    const userRegisterCredentials: userRegisterCredentials = {
+      username: cRUserName,
       email: cEmail,
-      password: cPassword,
+      password: cRPassword,
     };
-    //this function saves the value in localStorage
-    saveUserCredentials(userCredentials);
+    //this function saves the value in localStorage step 2
+    saveURCredentials(userRegisterCredentials);
   };
-  const saveUserCredentials = (userCredentials: UserCredentials) => {
-    localStorage.setItem("userCredentials", JSON.stringify(userCredentials));
+  //save User Register Credentials
+  const saveURCredentials = (
+    userRegisterCredentials: userRegisterCredentials
+  ) => {
+    localStorage.setItem(
+      "userRegisterCredentials",
+      JSON.stringify(userRegisterCredentials)
+    );
   };
   // localStorage save
   // regex
@@ -72,7 +89,7 @@ export default function Register(props: any) {
       sError1(false);
       sError2(false);
       sError3(false);
-      handleSave();
+      saveRILStorage();
       sShowRegister(false);
       //if the information is correctly written like regex wanted the info will be saved in localStorage
       //after this we will try to work the login if only userNames and passwords are same as the registered one
@@ -194,8 +211,8 @@ export default function Register(props: any) {
           <input
             type="text"
             id="userName"
-            onChange={(e) => sUserName(e.target.value)}
-            value={cUserName}
+            onChange={(e) => sRUserName(e.target.value)}
+            value={cRUserName}
             placeholder="At least 1 digit,3 letters (first letter capitalized)"
           />
         </div>
@@ -248,8 +265,8 @@ export default function Register(props: any) {
           <input
             type="password"
             id="password"
-            onChange={(e) => sPassword(e.target.value)}
-            value={cPassword}
+            onChange={(e) => sRPassword(e.target.value)}
+            value={cRPassword}
             placeholder="At least one digit,seven letter and one symbol"
           />
         </div>
@@ -261,8 +278,8 @@ export default function Register(props: any) {
           }
           type="submit"
           onClick={() => {
-            validateInput(cUserName, cEmail, cPassword);
-            sLValue(true);
+            validateInput(cRUserName, cEmail, cRPassword);
+            sLSValue(true);
           }}
         >
           Register

@@ -290,7 +290,7 @@
 /* body */
 .bodyContainer {
     width:100%;
-    height:calc(100vh - 100px);
+    min-height:calc(100vh - 100px);
     /* background-color: #0e0e0e; */
     position: relative;
     z-index: 1;
@@ -298,10 +298,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    overflow-x: hidden;
 }
 .bodyContainerChange {
     width:100%;
-    height:calc(100vh - 100px);
+    min-height:calc(100vh - 100px);
     /* background-color: #bbb8be; */
     background-image: url("../images/white.jpg");
     background-repeat: no-repeat;
@@ -310,9 +311,10 @@
     color:black;
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
 }
 .moonRegular, .sunRegular {
-    top:-35px;
+    top:15px;
     right: 200px;
     cursor: pointer;
     position: absolute;

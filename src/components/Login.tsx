@@ -6,8 +6,15 @@ import warning from "../icon/warning.svg";
 import success from "../icon/success.svg";
 import { useEffect, useState } from "react";
 export default function Login(props: any) {
-  // cUserName sUserName input login user
-  const { sShowLogin, sRemoveRegLog, sRUserName, cRUserName, cSM } = props;
+  //props
+  const {
+    sShowLogin,
+    sRemoveRegLog,
+    cLoginUserName, // current login User name from input
+    sLoginUserName, //set login User name from input
+    cSM,
+    cRemoveLSlogin,
+  } = props;
   //input login password
   const [cPassword, sPassword] = useState<
     string | number | readonly string[] | undefined
@@ -17,53 +24,77 @@ export default function Login(props: any) {
   const [cError2, sError2] = useState<boolean>(false);
   const [cSuccess1, sSucess1] = useState<boolean>(false);
   const [cSuccess2, sSucess2] = useState<boolean>(false);
-  // user registered userName and password
-  const [lSUsername, setLSUsername] = useState<string | number | symbol>();
-  const [lSPassword, setLSPassword] = useState<string | number | symbol>();
+  // user local storage registered userName and password
+  const [clSRUsername, sLSRUsername] = useState<string | number | symbol>();
+  const [clSRPassword, sLSRPassword] = useState<string | number | symbol>();
   //prevent default form
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // When we click the button it will not go on another site
   };
-  // user registered get userName and  get password
+  interface loginObj {
+    username: string | number | readonly string[] | undefined;
+    password: string | number | readonly string[] | undefined;
+  }
+  //save login in local storage
+  const loginSave = () => {
+    const loginSave: loginObj = {
+      username: cLoginUserName,
+      password: cPassword,
+    };
+    //this function saves the value in localStorage
+    saveLoginCredentials(loginSave);
+  };
+  const saveLoginCredentials = (userLogin: loginObj) => {
+    localStorage.setItem("userLoginCredentials", JSON.stringify(userLogin));
+  };
+  //save login in local storage
+
+  //if you log out it will be deleted from localStorage
+
+  // Get register's username and password from local storage
   useEffect(() => {
+    getUserCredentials();
     handleGetUserName();
     handleGetPassword();
   }, []);
 
-  // check with localStorage
   const getUserCredentials = () => {
-    const storedCredentials = localStorage.getItem("userCredentials");
+    const storedCredentials = localStorage.getItem("userRegisterCredentials");
     if (storedCredentials) {
       return JSON.parse(storedCredentials);
     }
+
     return { username: "", password: "" };
   };
   const handleGetUserName = () => {
     const userCredentials = getUserCredentials();
-    setLSUsername(userCredentials.username);
+    sLSRUsername(userCredentials.username);
   };
   const handleGetPassword = () => {
     const userCredentials = getUserCredentials();
-    setLSPassword(userCredentials.password);
+    sLSRPassword(userCredentials.password);
   };
-  // check with localStorage
+  // Get register's username and password from local storage
+
   // regex
   function validateInput() {
-    if (lSUsername === cRUserName && lSPassword === cPassword) {
+    //                   input                        input
+    if (clSRUsername === cLoginUserName && clSRPassword === cPassword) {
       sSucess1(true); //if Email was write than you get a notification about it
       sSucess2(true);
       sError1(false);
       sError2(false);
       sShowLogin(false);
       sRemoveRegLog(true);
-    } else if (lSUsername === cRUserName && lSPassword !== cPassword) {
+      loginSave();
+    } else if (clSRUsername === cLoginUserName && clSRPassword !== cPassword) {
       // Display error message when input is invalid
       sSucess1(true);
       sSucess2(false);
       sError1(false);
       sError2(true);
-    } else if (lSUsername !== cRUserName && lSPassword === cPassword) {
+    } else if (clSRUsername !== cLoginUserName && clSRPassword === cPassword) {
       // Display error message when input is invalid
       sSucess1(false);
       sSucess2(true);
@@ -76,7 +107,6 @@ export default function Login(props: any) {
       sError2(true);
     }
   }
-
   return (
     <div className={styles.loginContainer}>
       <form
@@ -121,8 +151,8 @@ export default function Login(props: any) {
           <input
             type="email"
             id="userName"
-            onChange={(e) => sRUserName(e.target.value)}
-            value={cRUserName}
+            onChange={(e) => sLoginUserName(e.target.value)}
+            value={cLoginUserName}
             placeholder="At least 1 digit,3 letters (first letter capitalized),1 symbol"
           />
         </div>

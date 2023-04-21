@@ -5,6 +5,8 @@ import Technology from "./Header HTCCH/Technology";
 import Contact from "./Header HTCCH/Contact";
 import ConfidentialAgreement from "./Header HTCCH/ConfidentialAgreement";
 import Help from "./Header HTCCH/Help";
+import moonRegular from "../icon/moonRegular.svg";
+import sunRegular from "../icon/sunRegular.svg";
 import { useState, useEffect } from "react";
 
 export default function Header(props: any) {
@@ -13,14 +15,24 @@ export default function Header(props: any) {
     sShowRegister,
     cRemoveRegLog,
     sRemoveRegLog,
-    cRUserName,
+    cLoginUserName,
     cSM,
+    sSM,
     sPageNum,
   } = props;
   return (
     <div
       className={cSM ? styles.headerContainerChange : styles.headerContainer}
     >
+      <img
+        src={cSM ? moonRegular : sunRegular}
+        alt="Change background color to dark"
+        className={cSM ? styles.moonRegular : styles.sunRegular}
+        onClick={() => {
+          sSM(!cSM);
+        }}
+        title="click to change the background color"
+      />
       <img src={logo} alt="logo" className={styles.logo} />
       <nav>
         <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(0)}>
@@ -64,7 +76,7 @@ export default function Header(props: any) {
           <>
             {/* <> and </> makes like an JSX */}
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <div className={styles.user}>{cRUserName}</div>
+              <div className={styles.user}>{cLoginUserName}</div>
               <button
                 style={{ marginLeft: 20 }}
                 className={cSM ? styles.btnChange : styles.btn}

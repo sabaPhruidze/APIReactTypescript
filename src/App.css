@@ -7,30 +7,35 @@
   padding:0;
   box-sizing: border-box;
   font-family: openSeas;
+  
 }
 body {
   width:100vw;
-  height:100vh;
+  min-height:100vh;
   display: flex;
   flex-direction: column;
   background-color: #040404;
+  overflow-x: hidden;
 }
 .containerFirst {
   width:100vw;
-  height:100vh;
+  min-height:100vh;
   display: flex;
   flex-direction: column;
   background-color: #040404;
+  overflow-x: hidden;
 }
 .containerChange {
   width:100vw;
-  height:100vh;
+  min-height:100vh;
   display: flex;
   flex-direction: column;
   background-color: #f4f4f4;
+  overflow-x: hidden;
 }
 .container {
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow-x: hidden;
 }

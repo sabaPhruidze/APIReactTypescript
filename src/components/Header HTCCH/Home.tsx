@@ -4,6 +4,24 @@ import slider2 from "../../images/viper.jpg";
 import slider3 from "../../images/laptop.jpg";
 import slider4 from "../../images/microlabJustListen.jpg";
 import slider5 from "../../images/acme.jpg";
+
+import cardBlack1 from "../../images/cards/1. darkLaptop.jpg";
+import cardWhite1 from "../../images/cards/1. lightLaptop.jpg";
+import cardBlack2 from "../../images/cards/2.darkProcessor.jpg";
+import cardWhite2 from "../../images/cards/2. whiteProcessor.jpg";
+import cardBlack3 from "../../images/cards/3.TV black and white.png";
+import cardWhite3 from "../../images/cards/3.TV black and white.png";
+import cardBlack4 from "../../images/cards/4.androidblack.png";
+import cardWhite4 from "../../images/cards/4.androidwhite.png";
+import cardBlack5 from "../../images/cards/5.android.jpg";
+import cardWhite5 from "../../images/cards/5.androidwhite.png";
+import cardBlack6 from "../../images/cards/6.blackMouse.jpg";
+import cardWhite6 from "../../images/cards/6. whiteMouse.png";
+import cardBlack7 from "../../images/cards/7. keyboard.jpg";
+import cardWhite7 from "../../images/cards/7.white keyboard.jpg";
+import cardBlack8 from "../../images/cards/8.smartWatch.jpg";
+import cardWhite8 from "../../images/cards/8.smartWatchWhite.png";
+
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import styles from "./HTCCH.module.css";
@@ -89,48 +107,92 @@ function CarouselFade(props: any) {
         }}
         className={styles.cardContainer}
       >
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+        <Card style={{ width: "18rem", height: "30rem" }}>
+          <Card.Img
+            variant="top"
+            src={cSM ? cardWhite1 : cardBlack1}
+            style={{ width: "100%", height: "200px" }}
+          />
+          <Card.Body
+            className={cSM ? styles.cardBgcWhite : styles.cardBgcBlack}
+          >
+            <Card.Title
+              className={cSM ? styles.cardTitleWhite : styles.cardTitleBlack}
+            >
+              Laptop
+            </Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Purpose: What will you be using the laptop for? If you need it for
+              basic tasks such as web browsing, email, and word processing, a
+              lower-end model will suffice.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">See more...</Button>
           </Card.Body>
         </Card>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+        <Card style={{ width: "18rem", height: "30rem" }}>
+          <Card.Img
+            variant="top"
+            src={cSM ? cardWhite1 : cardBlack1}
+            style={{ width: "100%", height: "200px" }}
+          />
+          <Card.Body
+            className={cSM ? styles.cardBgcWhite : styles.cardBgcBlack}
+          >
+            <Card.Title
+              className={cSM ? styles.cardTitleWhite : styles.cardTitleBlack}
+            >
+              Laptop
+            </Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Purpose: What will you be using the laptop for? If you need it for
+              basic tasks such as web browsing, email, and word processing, a
+              lower-end model will suffice.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">See more...</Button>
           </Card.Body>
         </Card>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+        <Card style={{ width: "18rem", height: "30rem" }}>
+          <Card.Img
+            variant="top"
+            src={cSM ? cardWhite1 : cardBlack1}
+            style={{ width: "100%", height: "200px" }}
+          />
+          <Card.Body
+            className={cSM ? styles.cardBgcWhite : styles.cardBgcBlack}
+          >
+            <Card.Title
+              className={cSM ? styles.cardTitleWhite : styles.cardTitleBlack}
+            >
+              Laptop
+            </Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Purpose: What will you be using the laptop for? If you need it for
+              basic tasks such as web browsing, email, and word processing, a
+              lower-end model will suffice.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">See more...</Button>
           </Card.Body>
         </Card>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+        <Card style={{ width: "18rem", height: "30rem" }}>
+          <Card.Img
+            variant="top"
+            src={cSM ? cardWhite1 : cardBlack1}
+            style={{ width: "100%", height: "200px" }}
+          />
+          <Card.Body
+            className={cSM ? styles.cardBgcWhite : styles.cardBgcBlack}
+          >
+            <Card.Title
+              className={cSM ? styles.cardTitleWhite : styles.cardTitleBlack}
+            >
+              Laptop
+            </Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Purpose: What will you be using the laptop for? If you need it for
+              basic tasks such as web browsing, email, and word processing, a
+              lower-end model will suffice.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary">See more...</Button>
           </Card.Body>
         </Card>
       </div>

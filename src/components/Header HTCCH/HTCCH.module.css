@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: row;
     color: white;
+    margin-bottom: -50px;
 }
 .dFlexRowChange {
     color: black;
@@ -167,9 +168,7 @@
 .cII ul li {
     margin-left:-13px;
 }
-.checkPostChange {
-   
-    
+.checkPostChange { 
     background-color:rgba(0, 0, 0, 0.427);
     border: 1px solid rgb(243, 239, 235);
     color:white;
@@ -273,5 +272,22 @@ h6 a:hover {
 }
 .cardContainer {
     width:80%;
+}
+.cardBgcWhite {
+    background-color: whitesmoke;
+    border:1px solid rgba(0, 0, 0, 0.504);
+    border-top: 0px;
+}
+.cardBgcBlack {
+    background-color: rgb(4, 4, 4);
+    border:1px solid rgba(0, 0, 0, 0.504);
+    border-top: 0px;
+    color:white;
+}
+.cardTitleWhite {
+    color:black
+}
+.cardTitleBlack {
+    color:white;
 }
 /* home */

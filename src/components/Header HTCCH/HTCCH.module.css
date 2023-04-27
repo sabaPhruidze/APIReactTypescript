@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     color: white;
-    margin-bottom: -50px;
+    margin-top: -30px;
     
 }
 .dFlexRowChange {
@@ -26,14 +26,15 @@
 }
 .dFlexColumn, .dFlexColumnChange {
     width:100%;
-    height:80px;
+    height:100px;
     display: flex;
     flex-direction: column;
 } 
 .dFlexColumn label,.dFlexColumnChange label {
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     cursor: pointer;
+    margin-left:10px;
 }
 .dFlexColumn input {
     height:50px;
@@ -192,6 +193,7 @@ h6 a:hover {
     justify-content: center;
     align-items: center;
     color: rgb(0, 0, 0);
+    
 }
 .fullAccordionContainerBlack {
     width:100%;
@@ -202,9 +204,9 @@ h6 a:hover {
     align-items: center;
     color: rgb(255, 255, 255);
     
+    
 }
 .accordionContainer {
-    
     width:1200px;
     height:630px;
     border-radius: 30px;
@@ -266,7 +268,9 @@ h6 a:hover {
     transform: rotate(180deg);
     filter: invert(0%) sepia(2%) saturate(21%) hue-rotate(286deg) brightness(101%) contrast(100%);
 }
-
+/* .childNoBlur {
+    filter: none !important;
+} */
 /* confidential agreement */
 
 /* home */
@@ -295,9 +299,6 @@ h6 a:hover {
 
 
 }
-
-
-
 .cardBgcWhite {
     background-color: whitesmoke;
     border:1px solid rgba(0, 0, 0, 0.504);

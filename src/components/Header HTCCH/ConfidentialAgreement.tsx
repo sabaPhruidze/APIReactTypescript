@@ -50,8 +50,8 @@ export default function ConfidentialAgreement(props: any) {
       <div
         className={
           cSM
-            ? `${styles.accordionContainerChange} `
-            : `${styles.accordionContainer}`
+            ? `${styles.accordionContainerChange} ${styles.childNoBlur}`
+            : `${styles.accordionContainer} ${styles.childNoBlur}`
         }
       >
         {DATA.map((data) => (

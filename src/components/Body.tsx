@@ -9,7 +9,17 @@ import Help from "./Header HTCCH/Help";
 export default function Body(props: any) {
   const { cSM, sSM, cPageNum } = props;
   return (
-    <div className={cSM ? styles.bodyContainerChange : styles.bodyContainer}>
+    <div
+      className={
+        cSM
+          ? styles.bodyContainerChange
+          : cSM && cPageNum === 3
+          ? `${styles.bodyContainerChange} ${styles.blur}`
+          : cSM === false && cPageNum === 3
+          ? `${styles.bodyContainer} ${styles.blur}`
+          : styles.bodyContainer
+      }
+    >
       {cPageNum === 0 ? (
         <Home cSM={cSM} />
       ) : cPageNum === 1 ? (

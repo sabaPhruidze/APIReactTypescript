@@ -14,7 +14,7 @@ export default function Login(props: any) {
     sLoginUserName, //set login User name from input
     cSM,
     cRemoveLSlogin,
-  } = props;
+  } = props; //f
   //input login password
   const [cPassword, sPassword] = useState<
     string | number | readonly string[] | undefined

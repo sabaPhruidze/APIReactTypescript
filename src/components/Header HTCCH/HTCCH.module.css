@@ -273,21 +273,65 @@ h6 a:hover {
 .cardContainer {
     width:80%;
 }
+.cardWhite {
+    width: 18rem;
+    height: 30rem;
+    margin: 30px 0 30px 20px;
+    box-sizing: border-box;
+    background-color: aliceblue;
+   
+}
+.cardBlack {
+    width: 18rem;
+    height: 30rem;
+    margin: 30px 0 30px 20px;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0);
+
+
+}
+
+
+
 .cardBgcWhite {
     background-color: whitesmoke;
     border:1px solid rgba(0, 0, 0, 0.504);
     border-top: 0px;
 }
+.cardImgBgcWhite {
+    width: 80%;
+    height: 200px;
+    border-radius: 5px;
+    background-color: aliceblue;
+    margin: auto;
+    object-fit: contain;    
+}
 .cardBgcBlack {
     background-color: rgb(4, 4, 4);
     border:1px solid rgba(0, 0, 0, 0.504);
     border-top: 0px;
+    
+   
+}
+.cardImgBgcBlack {
+    width: 80%;
+    height: 200px;
+    border-radius: 5px;
+    background-color: black;
+    margin: auto;
+    object-fit: contain;
+    
+}
+.cardTextWhite {
+    color:black;
+    height: 150px;
+    overflow: hidden;
+    
+}
+.cardTextBlack {
     color:white;
+    height: 150px;
+    overflow: hidden;
 }
-.cardTitleWhite {
-    color:black
-}
-.cardTitleBlack {
-    color:white;
-}
+
 /* home */

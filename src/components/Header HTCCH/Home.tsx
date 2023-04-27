@@ -113,6 +113,7 @@ function CarouselFade(props: any) {
             src={cSM ? cardWhite1 : cardBlack1}
             style={{ width: "100%", height: "200px" }}
           />
+          {/* s */}
           <Card.Body
             className={cSM ? styles.cardBgcWhite : styles.cardBgcBlack}
           >

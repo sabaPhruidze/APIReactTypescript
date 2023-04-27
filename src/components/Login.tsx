@@ -80,7 +80,12 @@ export default function Login(props: any) {
   // regex
   function validateInput() {
     //                   input                        input
-    if (clSRUsername === cLoginUserName && clSRPassword === cPassword) {
+    if (
+      clSRUsername &&
+      clSRUsername === cLoginUserName &&
+      clSRPassword &&
+      clSRPassword === cPassword
+    ) {
       sSucess1(true); //if Email was write than you get a notification about it
       sSucess2(true);
       sError1(false);

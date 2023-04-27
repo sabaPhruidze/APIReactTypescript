@@ -5,10 +5,6 @@ import Technology from "./Header HTCCH/Technology";
 import Contact from "./Header HTCCH/Contact";
 import ConfidentialAgreement from "./Header HTCCH/ConfidentialAgreement";
 import Help from "./Header HTCCH/Help";
-interface UserCredentials {
-  username: string;
-  password: string;
-}
 
 export default function Body(props: any) {
   const { cSM, sSM, cPageNum } = props;

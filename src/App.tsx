@@ -21,6 +21,7 @@ function App() {
   const [cPageNum, sPageNum] = useState<number>(0);
   const [cSM, sSM] = useState<boolean>(false); //current Sun moon change , set sun moon change
   //more visit in header
+  const shouldHideOverflow = cPageNum === 2 || cPageNum === 3;
   return (
     <div className={cSM ? "containerChange" : "containerFirst"}>
       {cShowLogin ? (

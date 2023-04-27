@@ -6,9 +6,11 @@
     flex-direction: row;
     color: white;
     margin-bottom: -50px;
+    
 }
 .dFlexRowChange {
     color: black;
+    
 }
 .dFlexRow h1,.dFlexRowChange h1 {
     margin-bottom: 30px;
@@ -202,24 +204,27 @@ h6 a:hover {
     
 }
 .accordionContainer {
+    
     width:1200px;
-    height:600px;
+    height:630px;
     border-radius: 30px;
     background-image: url("../../images/black1.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1200px;
     padding: 10px 20px;
+    
 }
 .accordionContainerChange {
     background-image: url("../../images/white.jpg");
     width:1200px;
-    height:600px;
+    height:630px;
     border-radius: 30px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1200px;
     padding: 10px 20px;
+    
 }
 .accordionCard {
     width:100%;

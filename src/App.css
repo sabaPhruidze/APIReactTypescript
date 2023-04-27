@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   background-color: #040404;
   overflow-x: hidden;
+  
 }
 .containerFirst {
   width:100vw;
@@ -23,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #040404;
-  overflow-x: hidden;
+  
 }
 .containerChange {
   width:100vw;
@@ -31,7 +32,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #f4f4f4;
-  overflow-x: hidden;
+  
 }
 .container {
   display: flex;

@@ -302,7 +302,7 @@
 }
 .bodyContainerChange {
     width:100%;
-    min-height:calc(100vh - 100px);
+    height:calc(100vh - 100px);
     /* background-color: #bbb8be; */
     background-image: url("../images/white.jpg");
     background-repeat: no-repeat;
@@ -331,10 +331,6 @@
 /* .blur {
     filter: blur(5px) ;
 } */
-.overflow {
-    overflow-y: auto;
-}
-
 
 /* body */
 

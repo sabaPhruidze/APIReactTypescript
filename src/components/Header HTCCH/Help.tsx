@@ -5,13 +5,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function Help(props: any) {
   const { cSM } = props;
   return (
-    <div className="row">
-      <div style={{ width: "12%" }}>
+    <div className="row" style={{ position: "relative" }}>
+      <div
+        style={{
+          width: "12%",
+          height: "100%",
+          position: "fixed",
+          top: "50px",
+          left: "5px",
+        }}
+        className="nav-pills"
+      >
         <Nav
           id="navbar-example3"
           className="h-100 flex-column align-items-stretch border-end"
         >
-          <Nav.Item className="nav-pills">
+          <Nav.Item>
             <Nav.Link
               href="#item-1"
               style={{ fontSize: "18px" }}
@@ -19,7 +28,7 @@ export default function Help(props: any) {
             >
               What we sell
             </Nav.Link>
-            <Nav className="nav-pills">
+            <Nav>
               <Nav.Item>
                 <Nav.Link className="ms-3 my-1" href="#item-1-1">
                   Laptop
@@ -63,19 +72,27 @@ export default function Help(props: any) {
             </Nav>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="#item-2" style={{ fontSize: "18px" }}>
+            <Nav.Link
+              href="#item-2"
+              style={{ fontSize: "18px" }}
+              className="nav-pills"
+            >
               Best selling items
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="#item-3" style={{ fontSize: "18px" }}>
+            <Nav.Link
+              href="#item-3"
+              style={{ fontSize: "18px" }}
+              className="nav-pills"
+            >
               For more info
             </Nav.Link>
           </Nav.Item>
         </Nav>
       </div>
       <div
-        style={{ width: "85%" }}
+        style={{ width: "85%", marginLeft: "12%" }}
         className={cSM ? "mt-3 text-black" : "mt-3 text-white"}
       >
         <div

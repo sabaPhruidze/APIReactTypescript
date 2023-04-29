@@ -5,7 +5,6 @@ import Technology from "./Header HTCCH/Technology";
 import Contact from "./Header HTCCH/Contact";
 import ConfidentialAgreement from "./Header HTCCH/ConfidentialAgreement";
 import Help from "./Header HTCCH/Help";
-
 export default function Body(props: any) {
   const { cSM, sSM, cPageNum } = props;
   return (
@@ -18,9 +17,9 @@ export default function Body(props: any) {
           : cSM === false && cPageNum === 3
           ? `${styles.bodyContainer} ${styles.blur}`
           : cSM && cPageNum === 4
-          ? `${styles.bodyContainerChange} ${styles.overflow}`
+          ? `${styles.bodyContainerChange}`
           : cSM === false && cPageNum === 4
-          ? `${styles.bodyContainer} ${styles.overflow}`
+          ? `${styles.bodyContainer}`
           : styles.bodyContainer
       }
     >

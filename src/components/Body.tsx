@@ -17,6 +17,10 @@ export default function Body(props: any) {
           ? `${styles.bodyContainerChange} ${styles.blur}`
           : cSM === false && cPageNum === 3
           ? `${styles.bodyContainer} ${styles.blur}`
+          : cSM && cPageNum === 4
+          ? `${styles.bodyContainerChange} ${styles.overflow}`
+          : cSM === false && cPageNum === 4
+          ? `${styles.bodyContainer} ${styles.overflow}`
           : styles.bodyContainer
       }
     >

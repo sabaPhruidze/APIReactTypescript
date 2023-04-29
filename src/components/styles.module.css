@@ -331,7 +331,9 @@
 /* .blur {
     filter: blur(5px) ;
 } */
-
+.overflow {
+    overflow-y: auto;
+}
 
 
 /* body */

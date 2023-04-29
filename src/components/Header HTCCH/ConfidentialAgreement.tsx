@@ -6,7 +6,6 @@ import CFChild from "./CFChild";
 export default function ConfidentialAgreement(props: any) {
   const [cAN, sAN] = useState<number | null>(0); // cAN current Accordion number , set Accordion number
   const { cSM } = props;
-
   const DATA = [
     {
       number: 1,

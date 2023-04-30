@@ -14,6 +14,8 @@ export default function Login(props: any) {
     sLoginUserName, //set login User name from input
     cSM,
     cRemoveLSlogin,
+    cTechnologyunlocked,
+    sTechnologyunlocked,
   } = props; //f
   //input login password
   const [cPassword, sPassword] = useState<
@@ -92,6 +94,7 @@ export default function Login(props: any) {
       sError2(false);
       sShowLogin(false);
       sRemoveRegLog(true);
+      sTechnologyunlocked(true);
       loginSave();
     } else if (clSRUsername === cLoginUserName && clSRPassword !== cPassword) {
       // Display error message when input is invalid

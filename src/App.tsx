@@ -22,6 +22,7 @@ function App() {
   const [cSM, sSM] = useState<boolean>(false); //current Sun moon change , set sun moon change
   //more visit in header
   // const shouldHideOverflow = cPageNum === 2 || cPageNum === 3;
+  const [cTechnologyunlocked, sTechnologyunlocked] = useState<boolean>(false);
   return (
     <div className={cSM ? "containerChange" : "containerFirst"}>
       {cShowLogin ? (
@@ -33,6 +34,8 @@ function App() {
           cSM={cSM}
           cRemoveRegLog={cRemoveRegLog}
           cRemoveLSlogin={cRemoveLSlogin}
+          cTechnologyunlocked={cTechnologyunlocked}
+          sTechnologyunlocked={sTechnologyunlocked}
         />
       ) : null}
       {cShowRegister ? (
@@ -52,6 +55,8 @@ function App() {
         sPageNum={sPageNum}
         cRemoveLSlogin={cRemoveLSlogin}
         sRemoveLSlogin={sRemoveLSlogin}
+        cTechnologyunlocked={cTechnologyunlocked}
+        sTechnologyunlocked={sTechnologyunlocked}
       />
       <Body cSM={cSM} sSM={sSM} cPageNum={cPageNum} />
       <Footer

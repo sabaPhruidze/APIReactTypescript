@@ -19,6 +19,8 @@ export default function Header(props: any) {
     cSM,
     sSM,
     sPageNum,
+    cTechnologyunlocked,
+    sTechnologyunlocked,
   } = props;
   return (
     <div
@@ -35,10 +37,45 @@ export default function Header(props: any) {
       />
       <img src={logo} alt="logo" className={styles.logo} />
       <nav>
-        <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(0)}>
+        <a
+          href="#"
+          className={
+            (cTechnologyunlocked !== true && cSM) ||
+            (cTechnologyunlocked && cSM !== true)
+              ? `${styles.nav}`
+              : `${styles.navChange}`
+          }
+          onClick={() => sPageNum(0)}
+        >
           Home
         </a>
-        <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(1)}>
+        <a
+          href="#"
+          className={styles.nav}
+          onClick={() => {
+            if (cTechnologyunlocked === false) {
+              return "";
+            } else {
+              sPageNum(1);
+            }
+          }}
+          style={{
+            color:
+              cTechnologyunlocked && cSM
+                ? "black"
+                : cTechnologyunlocked !== true && cSM
+                ? "#8c8787"
+                : cTechnologyunlocked && cSM !== true
+                ? "white"
+                : "#8c8787",
+            textDecoration:
+              (cTechnologyunlocked !== true && cSM) ||
+              (cTechnologyunlocked !== true && cSM !== true)
+                ? "none"
+                : "",
+          }}
+          //by this it will be grey when you are not logged in and You cannot see the technology ,else you can open technology
+        >
           Technology
         </a>
         <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(2)}>
@@ -82,6 +119,7 @@ export default function Header(props: any) {
                 className={cSM ? styles.btnChange : styles.btn}
                 onClick={() => {
                   sRemoveRegLog(false);
+                  sTechnologyunlocked(false);
                 }}
               >
                 Log out

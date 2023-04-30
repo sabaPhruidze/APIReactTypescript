@@ -103,7 +103,7 @@
 }
 .warning1, .success1 {
     position: absolute;
-    top:217px;
+    top:220px;
     right:40px;
     cursor: pointer;
 }
@@ -119,7 +119,7 @@
 }
 .warning2, .success2 {
     position: absolute;
-    top:calc(210px + 87px);
+    top:calc(210px + 110px);
     right:40px;
     cursor: pointer;
 }
@@ -135,7 +135,7 @@
 }
 .warning3, .success3 {
     position: absolute;
-    top:calc(210px + 70px + 92px);
+    top:calc(210px + 100px + 110px);
     right:40px;
     cursor: pointer;
 }

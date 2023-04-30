@@ -96,7 +96,7 @@ export default function Header(props: any) {
           Contact
         </a>
         <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(3)}>
-          confidential agreement
+          Confidential agreement
         </a>
         <a href="#" className={`${styles.nav}`} onClick={() => sPageNum(4)}>
           help

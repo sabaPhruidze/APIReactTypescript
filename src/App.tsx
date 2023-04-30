@@ -9,7 +9,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // npm install react-bootstrap
 
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+const userLoginCredentials = localStorage.getItem("userLoginCredentials");
+const userRegisterCredentials = localStorage.getItem("userRegisterCredentials");
 function App() {
   const [cShowLogin, sShowLogin] = useState<boolean>(false);
   const [cShowRegister, sShowRegister] = useState<boolean>(false);
@@ -23,6 +25,26 @@ function App() {
   //more visit in header
   // const shouldHideOverflow = cPageNum === 2 || cPageNum === 3;
   const [cTechnologyunlocked, sTechnologyunlocked] = useState<boolean>(false);
+  // localStorage part
+  const [cWriteLogOut, sCWriteLogOut] = useState(false); // current write logOut
+  useEffect(() => {
+    if (userLoginCredentials && userRegisterCredentials) {
+      const loginData = JSON.parse(userLoginCredentials);
+      const registerData = JSON.parse(userRegisterCredentials);
+
+      if (
+        loginData.username === registerData.username &&
+        loginData.password === registerData.password
+      ) {
+        sCWriteLogOut(true);
+        console.log("good");
+      } else {
+        sCWriteLogOut(false);
+        console.log("bad");
+      }
+    }
+  }, []);
+
   return (
     <div className={cSM ? "containerChange" : "containerFirst"}>
       {cShowLogin ? (
@@ -57,6 +79,8 @@ function App() {
         sRemoveLSlogin={sRemoveLSlogin}
         cTechnologyunlocked={cTechnologyunlocked}
         sTechnologyunlocked={sTechnologyunlocked}
+        cWriteLogOut={cWriteLogOut}
+        sCWriteLogOut={sCWriteLogOut}
       />
       <Body cSM={cSM} sSM={sSM} cPageNum={cPageNum} />
       <Footer

@@ -10,6 +10,7 @@ import sunRegular from "../icon/sunRegular.svg";
 import { useState, useEffect } from "react";
 
 export default function Header(props: any) {
+  const [cMountLogin, sMountLogin] = useState<string | undefined>(undefined);
   const {
     sShowLogin,
     sShowRegister,
@@ -21,7 +22,20 @@ export default function Header(props: any) {
     sPageNum,
     cTechnologyunlocked,
     sTechnologyunlocked,
+    cWriteLogOut,
+    cShowLogin,
+    sCWriteLogOut,
   } = props;
+  useEffect(() => {
+    const userLoginCredentials = localStorage.getItem("userLoginCredentials");
+    if (userLoginCredentials) {
+      const loginData = JSON.parse(userLoginCredentials);
+      if (loginData) {
+        sMountLogin(loginData.username); //when it will become true loginData.username will be written
+      }
+    }
+  }, [cShowLogin, sRemoveRegLog]);
+
   return (
     <div
       className={cSM ? styles.headerContainerChange : styles.headerContainer}
@@ -89,7 +103,7 @@ export default function Header(props: any) {
         </a>
       </nav>
       <div className={styles.regLog}>
-        {cRemoveRegLog !== true ? (
+        {cRemoveRegLog !== true && cWriteLogOut !== true ? (
           <>
             <button
               style={{ marginRight: 20 }}
@@ -113,14 +127,16 @@ export default function Header(props: any) {
           <>
             {/* <> and </> makes like an JSX */}
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <div className={styles.user}>{cLoginUserName}</div>
+              <div className={styles.user}>{cMountLogin}</div>
               <button
                 style={{ marginLeft: 20 }}
                 className={cSM ? styles.btnChange : styles.btn}
                 onClick={() => {
+                  localStorage.removeItem("userLoginCredentials");
                   sRemoveRegLog(false);
+                  sCWriteLogOut(false);
                   sTechnologyunlocked(false);
-                  localStorage.removeItem("userLoginCredentials"); // using this when you log out the localStorage of userLoginCredentials will be removed
+                  // using this when you log out the localStorage of userLoginCredentials will be removed
                 }}
               >
                 Log out

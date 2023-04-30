@@ -120,6 +120,7 @@ export default function Header(props: any) {
                 onClick={() => {
                   sRemoveRegLog(false);
                   sTechnologyunlocked(false);
+                  localStorage.removeItem("userLoginCredentials"); // using this when you log out the localStorage of userLoginCredentials will be removed
                 }}
               >
                 Log out
